@@ -51,5 +51,32 @@ describe('linkedList', function() {
     expect(linkedList.contains(4)).to.equal(false);
   });
 
+  it('should have methods "addToHead" and "removeTail', function(){
+    expect(linkedList.addToHead).to.be.a("function");
+    expect(linkedList.removeTail).to.be.a("function");
+  });
+
+  it('should have a ".previous" property on each node', function(){
+    linkedList.addToTail(13);
+    expect(linkedList.tail).to.have.property("previous");
+  });
+
+  it('should designate a new head when "addToHead" is called', function(){
+    linkedList.addToHead(23);
+    expect(linkedList.head.value).to.equal(23);
+    linkedList.addToHead(11);
+    expect(linkedList.head.next.value).to.equal(23);
+  });
+
+  it('should remove the tail when "removeTail" is called', function(){
+    linkedList.addToHead(11);
+    linkedList.addToHead(12);
+    linkedList.addToTail(15);
+    linkedList.addToHead(7);
+    expect(linkedList.tail.value).to.equal(15);
+    linkedList.removeTail();
+    expect(linkedList.tail.value).to.equal(11);
+  })
+
   // add more tests here to test the functionality of linkedList
 });
