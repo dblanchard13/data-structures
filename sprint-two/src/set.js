@@ -15,7 +15,7 @@ setPrototype.contains = function(item){
     if(this[key] === item){
       return true;
     }
-  }
+  };
   return false;
 };
 
@@ -24,7 +24,7 @@ setPrototype.remove = function(item){
     if(this[key] === item){
       delete this[key];
     }
-  }
+  };
 };
 
 /*

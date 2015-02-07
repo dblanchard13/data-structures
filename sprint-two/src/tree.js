@@ -2,7 +2,7 @@ var Tree = function(value){
   var newTree = {};
   newTree.value = value;
   _.extend(newTree, treeMethods);
-  newTree.children = [];  // fix me
+  newTree.children = [];  
 
   return newTree;
 };
@@ -16,18 +16,14 @@ treeMethods.addChild = function(value){
 treeMethods.contains = function(target){
   var flag = false;
 
+  if (this.value === target){ flag = true };
 
-
-    if (this.value === target){
-      flag = true;
-    }
-
-    for(var i = 0; i < this.children.length; i++) {
-      
-     if(this.children[i].contains(target)){
-      return true;
-      }        
-    } 
+  for(var i = 0; i < this.children.length; i++) {
+   if(this.children[i].contains(target)){
+    return true;
+    }        
+  };
+   
   return flag;
 };
 

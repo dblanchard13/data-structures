@@ -35,7 +35,7 @@ searchMethods.contains = function (target) {
 
   if (target > this.value) {
     if (this.right) {
-       return this.right.contains(target);
+      return this.right.contains(target);
     }
   }
 
@@ -55,6 +55,8 @@ searchMethods.depthFirstLog = function (cb) {
     this.right.depthFirstLog(cb);
   }
 };
+
+
 /*
  * Complexity: What is the time complexity of the above functions?
  */
