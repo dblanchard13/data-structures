@@ -7,12 +7,24 @@ var Set = function(){
 var setPrototype = {};
 
 setPrototype.add = function(item){
+  this[item] = item;
 };
 
 setPrototype.contains = function(item){
+  for(var key in this){
+    if(this[key] === item){
+      return true;
+    }
+  }
+  return false;
 };
 
 setPrototype.remove = function(item){
+  for(var key in this){
+    if(this[key] === item){
+      delete this[key];
+    }
+  }
 };
 
 /*
