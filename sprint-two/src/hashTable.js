@@ -4,14 +4,6 @@ var HashTable = function(){
   this.seen = {seen: null}; 
 };
 
-// var v1 = 'val1'
-// var v2 = 'val2'
-// k = v1, v = v1
-// k = v2, v = v2
-// i = 3
-// storage[3] = {v1: 'val1', next: null}
-//temp = {v1: 'val1', next: null}
-//storage[3] = {v2: 'val2', next: {v1: 'val1', next: null}}
 
 HashTable.prototype.insert = function(k, v){
   var i = getIndexBelowMaxForKey(k, this._limit);
